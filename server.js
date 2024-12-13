@@ -48,6 +48,19 @@ const server = http.createServer((req,res) => {
             res.end();
         })
     }
+
+    else if (page === '/api'){
+        if ('rapper' in params){
+            if (params['rapper'] === 'jcole'){
+                res.writeHead(200, {'Content-Type': 'application/json'});
+                const obj = {
+                    name: 'J Cole',
+                    reason: 'very rarely does a grown man apologize when not forced to do so',
+                    vid: 'https://www.youtube.com/embed?v=F18RQuT3-c0&autoplay=0'
+                }
+            }
+        }
+    }
 })
 
 server.listen(9000);

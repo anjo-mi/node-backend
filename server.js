@@ -56,7 +56,23 @@ const server = http.createServer((req,res) => {
                 const obj = {
                     name: 'J Cole',
                     reason: 'very rarely does a grown man apologize when not forced to do so',
-                    vid: 'https://www.youtube.com/embed?v=F18RQuT3-c0&autoplay=0'
+                    src: "https://www.youtube.com/embed/IsEw3x3dz30?si=NAfWPbNWvKkpsy9r"
+                }
+            }
+            else if (params['rapper'] === 'kendrick'){
+                res.writeHead(200, {'Content-Type': 'application/json'});
+                const obj = {
+                    name: 'K Dot',
+                    reason: 'cats can paw at whatever, but a dog will still bite its head off',
+                    src: "https://www.youtube.com/embed/pn3JwYoqRN8?si=NAfWPbNWvKkpsy9r"
+                }
+            }
+            else if (params['rapper'] === 'drake'){
+                res.writeHead(200, {'Content-Type': 'application/json'});
+                const obj = {
+                    name: 'Drake',
+                    reason: 'well, drake thinks youre right',
+                    src: "https://www.youtube.com/embed/iHHMG9IXfMk?si=NAfWPbNWvKkpsy9r"
                 }
             }
         }

@@ -50,30 +50,33 @@ const server = http.createServer((req,res) => {
     }
 
     else if (page === '/api'){
-        if ('rapper' in params){
-            if (params['rapper'] === 'jcole'){
+        if ('artist' in params){
+            if (params['artist'] === 'jcole'){
                 res.writeHead(200, {'Content-Type': 'application/json'});
                 const obj = {
                     name: 'J Cole',
                     reason: 'very rarely does a grown man apologize when not forced to do so',
                     src: "https://www.youtube.com/embed/IsEw3x3dz30?si=NAfWPbNWvKkpsy9r"
                 }
+                res.end(JSON.stringify(obj));
             }
-            else if (params['rapper'] === 'kendrick'){
+            else if (params['artist'] === 'kendrick'){
                 res.writeHead(200, {'Content-Type': 'application/json'});
                 const obj = {
                     name: 'K Dot',
                     reason: 'cats can paw at whatever, but a dog will still bite its head off',
                     src: "https://www.youtube.com/embed/pn3JwYoqRN8?si=NAfWPbNWvKkpsy9r"
                 }
+                res.end(JSON.stringify(obj));
             }
-            else if (params['rapper'] === 'drake'){
+            else if (params['artist'] === 'drake'){
                 res.writeHead(200, {'Content-Type': 'application/json'});
                 const obj = {
                     name: 'Drake',
                     reason: 'well, drake thinks youre right',
                     src: "https://www.youtube.com/embed/iHHMG9IXfMk?si=NAfWPbNWvKkpsy9r"
                 }
+                res.end(JSON.stringify(obj));
             }
         }
     }

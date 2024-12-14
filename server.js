@@ -15,6 +15,27 @@ const server = http.createServer((req,res) => {
         })
     }
 
+    else if (page === '/landing.html'){
+        fs.readFile('landing.html', (err,data) => {
+            if (err){
+                res.writeHead(404);
+                res.end();
+                return;
+            }
+
+            let htmlContent = data.toString();
+
+            if (params['src'] && params['reason']){
+                htmlContent = htmlContent.replace('iframe src', params['src']);
+                htmlContent = htmlContent.replace('h3 reason', params['reason']);
+
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                res.write(htmlContent);
+                res.end();
+            }
+        })
+    }
+
     else if (page === '/css/style.css'){
         fs.readFile('css/style.css', (err,data) => {
             res.write(data);

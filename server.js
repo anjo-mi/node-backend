@@ -26,7 +26,7 @@ const server = http.createServer((req,res) => {
             let htmlContent = data.toString();
 
             if (params['src'] && params['reason']){
-                htmlContent = htmlContent.replace('iframe src', params['src']);
+                htmlContent = htmlContent.replace('iframe src', params['src'] + '?autoplay=1');
                 htmlContent = htmlContent.replace('h3 reason', params['reason']);
 
                 res.writeHead(200, {'Content-Type': 'text/html'});

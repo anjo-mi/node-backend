@@ -16,18 +16,19 @@ async function makeChoice(e){
     
     const link = document.querySelector('.clickToSee');
     const hyperlink = link.querySelector('.link')
-    link.addEventListener('click', toLanding);
-
+    
     hyperlink.firstChild.insertData(6, ` ${data.name} `)
     link.style.display = 'block';
     
-
+    
+    link.removeEventListener('click', toLanding);
+    link.addEventListener('click', toLanding);
 }
 
 
-async function toLanding(){
-    const res = await fetch(`/landing.html?src=${anchor}&reason=${reason}`);
-    const src = await res.json();
-    console.log(src)
+async function toLanding(e){
+    e.preventDefault();
+
+    window.location.href = `/landing.html?src=${anchor}&reason=${reason}`
 }
 //get another fetch that calls the landing page, and display the video

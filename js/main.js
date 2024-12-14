@@ -13,7 +13,11 @@ async function makeChoice(e){
     const link = document.querySelector('.clickToSee');
     const anchor = link.querySelector('.link');
 
+    anchor.firstChild.insertData(6, ` ${data.name} `)
+
     anchor.href = data.src
 
     link.style.display = 'block';
 }
+
+//get another fetch that calls the landing page, and display the video
